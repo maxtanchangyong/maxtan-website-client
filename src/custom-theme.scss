@@ -1,0 +1,92 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+$caput-mortuum-palette: (
+  100: #e1cac7,
+  200: #c6a9a5,
+  300: #ac8782,
+  400: #986d68,
+  500: #84544e,
+  700: #673f3c,
+  800: #573333,
+  900: #462628,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: #E8D0B5,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: white,
+    A700: white,
+  )
+);
+
+$burnt-sienna: (
+  100: #f0c9bb,
+  200: #e7a78f,
+  300: #df8664,
+  400: #da6f44,
+  500: #d55926,
+  600: #cb5423,
+  700: #be4d1f,
+  800: #b0471d,
+  900: #983b15,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: white,
+    A700: white,
+  )
+);
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$maxtan-website-client-primary: mat.define-palette($caput-mortuum-palette, 800);
+$maxtan-website-client-accent: mat.define-palette($burnt-sienna, 400);
+
+// The warn palette is optional (defaults to red).
+$maxtan-website-client-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$maxtan-website-client-theme: mat.define-light-theme((
+  color: (
+    primary: $maxtan-website-client-primary,
+    accent: $maxtan-website-client-accent,
+    warn: $maxtan-website-client-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($maxtan-website-client-theme);
+

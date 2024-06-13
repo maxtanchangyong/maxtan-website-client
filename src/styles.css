@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Lora'; background-color: #E8D0B5; }
+
+/*
+--rich-black: #040316ff;
+--dun: #e8d0b5ff;
+--caput-mortuum: #573333ff;
+--peach: #ffc08aff;
+--burnt-sienna: #da6e44ff;
+*/
