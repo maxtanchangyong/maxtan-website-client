@@ -1,0 +1,39 @@
+<div id="landing_page_container">
+    <!--############################
+    ||                            ||
+    ||    Landing Introduction    ||
+    ||                            ||
+    #############################-->
+    <div id="landing_introduction">
+        <h1><span class="gradient">Max</span> Tan</h1>
+    </div>
+
+    <!--############################
+    ||                            ||
+    ||         Skillsets          ||
+    ||                            ||
+    #############################-->
+    <div id="skillsets_container">
+        @for (skillset of SKILLSETS; track $index) {
+            <div
+                [style.grid-area]="skillset.skillset.toString()"
+                [style.background-color]="skillset.boxColor"
+                [style.color]="skillset.textColor"
+                [style.border]="'1px solid ' + skillset.boxColor"
+                [style.flex-direction]="skillset.flexDirection"
+                style="border-radius: 15px; display: flex; justify-content: center; align-items: center; gap: 1em;">
+                <mat-icon
+                    [svgIcon]="skillset.skillset"></mat-icon>
+                <h5>{{ skillset.skillset }}</h5>
+            </div>
+        }
+    </div>
+
+    <div id="services_container">
+        <div style="display: flex; flex-direction: row;">
+            <h1>Do Better</h1><h5 style="padding-top: 6em;">What can I Provide</h5>
+        </div>
+
+        
+    </div>
+</div>

@@ -1,0 +1,28 @@
+#landing_page_container {
+    display: grid;
+}
+
+#landing_introduction {
+    height: 50em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#skillsets_container {
+    height: 35em;
+    gap: 0.8em;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+        "NodeJS NodeJS Linux"
+        "NodeJS NodeJS Linux"
+        "Angular MySQL Linux";
+}
+
+#services_container {
+    height: 50em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

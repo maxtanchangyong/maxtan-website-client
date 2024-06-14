@@ -1,3 +1,22 @@
 mat-toolbar {
     background-color: #E8D0B5;
+    gap: 2em;
+    margin-top: 2em;
+}
+
+mat-drawer {
+    background-color: aqua;
+}
+
+mat-drawer-content {
+    background-color: #E8D0B5;
+    padding: 0% 15% 0% 15%;
+}
+
+#logo_icon_button {
+    transform: scale(3);
+}
+
+#resume_button {
+    transform: scale(1.2);
 }

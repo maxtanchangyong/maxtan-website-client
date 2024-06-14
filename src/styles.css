@@ -1,7 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: 'Lora'; background-color: #E8D0B5; }
+html, body { height: 100%; font-size: 100%; }
+body { margin: 0; font-family: 'Lora'; font-weight: 400; background-color: #E8D0B5; }
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Lora';
+    font-weight: 700;
+}
+
+h1 { font-size: 6.325vw; /* 121.44px */ }
+
+h2 { font-size: 4.217vw; /* 80.96px */ }
+
+h3 { font-size: 2.817vw; /* 54.08px */ }
+
+h4 { font-size: 1.875vw; /* 36px */ }
+
+h5 { font-size: 1.25vw; /* 24px */ }
+
+small { font-size: 0.558vw; /* 10.72px */ }
+
+span.gradient {
+    background: linear-gradient(90deg, rgba(87,51,51,1) 0%, rgba(218,110,68,1) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 /*
 --rich-black: #040316ff;
@@ -10,3 +33,4 @@ body { margin: 0; font-family: 'Lora'; background-color: #E8D0B5; }
 --peach: #ffc08aff;
 --burnt-sienna: #da6e44ff;
 */
+
