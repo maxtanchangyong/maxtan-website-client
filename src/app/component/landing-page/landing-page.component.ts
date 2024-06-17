@@ -4,12 +4,13 @@ import { DomSanitizer } from '@angular/platform-browser';
 // Material
 import { MatIconModule } from '@angular/material/icon';
 import { MatIconRegistry } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
   imports: [
-    MatIconModule,
+    MatIconModule, MatButtonModule,
   ],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
@@ -26,7 +27,7 @@ export class LandingPageComponent {
   public SERVICES = [
     { name: 'BrandReputationEnhancement', service: 'Brand Reputation Enhancement', description: 'Have something unique experience for your customer, have them trust in you.', svgIcon: '../../assets/handshake.svg' },
     { name: 'MoreIncomeLessTask', service: 'More Income, Less Task', description: 'Eliminate Repetitive Task, Focus on Your Business Core Values.', svgIcon: '../../assets/sales_amount.svg' },
-    { name: 'ZeroInformationLag', service: 'Zero Information-Lag', description: 'You are the decision maker, all information of your business at one screen.', svgIcon: '../../assets/handshake.svg' },
+    { name: 'ZeroInformationLag', service: 'Zero Information-Lag', description: 'You are the decision maker, all information of your business at one screen.', svgIcon: '../../assets/dashboard.svg' },
   ]
 
   private matIconRegistry = inject(MatIconRegistry);
@@ -39,5 +40,7 @@ export class LandingPageComponent {
     this.SERVICES.forEach(element => {
       this.matIconRegistry.addSvgIcon(`${element.name}`, this.domSanitizer.bypassSecurityTrustResourceUrl(element.svgIcon));
     });
+    this.matIconRegistry.addSvgIcon('logo', this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/max_logo.svg'));
+    this.matIconRegistry.addSvgIcon('email', this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/email.svg'));
   }
 }

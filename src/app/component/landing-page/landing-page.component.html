@@ -1,39 +1,68 @@
-<div id="landing_page_container">
+<section id="landing_page_container">
     <!--############################
     ||                            ||
     ||    Landing Introduction    ||
     ||                            ||
     #############################-->
-    <div id="landing_introduction">
+    <section id="landing_introduction">
         <h1><span class="gradient">Max</span> Tan</h1>
-    </div>
+    </section>
 
     <!--############################
     ||                            ||
     ||         Skillsets          ||
     ||                            ||
     #############################-->
-    <div id="skillsets_container">
+    <section id="skillsets_container">
         @for (skillset of SKILLSETS; track $index) {
-            <div
-                [style.grid-area]="skillset.skillset.toString()"
-                [style.background-color]="skillset.boxColor"
-                [style.color]="skillset.textColor"
-                [style.border]="'1px solid ' + skillset.boxColor"
-                [style.flex-direction]="skillset.flexDirection"
-                style="border-radius: 15px; display: flex; justify-content: center; align-items: center; gap: 1em;">
-                <mat-icon
-                    [svgIcon]="skillset.skillset"></mat-icon>
-                <h5>{{ skillset.skillset }}</h5>
-            </div>
+        <div [style.grid-area]="skillset.skillset.toString()" [style.background-color]="skillset.boxColor"
+            [style.color]="skillset.textColor" [style.border]="'1px solid ' + skillset.boxColor"
+            [style.flex-direction]="skillset.flexDirection"
+            style="border-radius: 15px; display: flex; justify-content: center; align-items: center; gap: 1em;">
+            <mat-icon [svgIcon]="skillset.skillset"></mat-icon>
+            <h5>{{ skillset.skillset }}</h5>
+        </div>
         }
-    </div>
+    </section>
 
-    <div id="services_container">
-        <div style="display: flex; flex-direction: row;">
-            <h1>Do Better</h1><h5 style="padding-top: 6em;">What can I Provide</h5>
+    <section id="services_container">
+        <div style="display: flex; flex-direction: row; justify-content: center;">
+            <h1>Do Better</h1>
+            <h5 style="padding-top: 6em;">What can I Provide</h5>
         </div>
 
-        
-    </div>
-</div>
+        @for (service of SERVICES; track $index) {
+        <div style="display: flex; flex-direction: row; gap: 1em; padding-bottom: 5rem;">
+            <div
+                style="background-color: #DFC8AF; width: 30%; border-radius: 15px; display: flex; justify-content: center; align-items: center;">
+                <mat-icon style="transform: scale(8);" [svgIcon]="service.name"></mat-icon>
+            </div>
+            <div style="background-color: #DFC8AF; width: 70%; border-radius: 15px; padding: 2rem;">
+                <h3>{{ service.service }}</h3><br>
+                <h5>{{ service.description }}</h5>
+            </div>
+        </div>
+        }
+    </section>
+
+    <section id="reminder_container">
+        <div style="display: flex; flex-direction: row; justify-content: center; text-align: center;">
+            <h2>Don't let this <br>to be the <span class="gradient">End</span> of your Path</h2>
+        </div>
+        <button mat-flat-button color="primary" style="width: 30%; height: 5rem; border-radius: 15px; align-self: center;">Contact Me</button>
+    </section>
+
+    <section id="contact_container">
+        <div style="display: flex; flex-direction: row; gap: 2rem; padding: 3rem; height: auto;">
+            <mat-icon svgIcon="logo" style="transform: scale(3);"></mat-icon>
+            <h5>Do Better</h5>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 3rem; width: 100%; height: 80%; justify-content: center; align-items: center;">
+            <button mat-icon-button>
+                <mat-icon svgIcon="email" style="transform: scale(10);"></mat-icon>
+            </button>
+            <h3>Email</h3>
+        </div>
+    </section>
+</section>
