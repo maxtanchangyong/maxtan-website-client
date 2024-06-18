@@ -22,16 +22,16 @@ import { MatButtonModule } from '@angular/material/button';
 export class LandingPageComponent implements OnInit, OnDestroy {
 
   public SKILLSETS = [
-    { skillset: 'NodeJS', boxColor: '#573333ff', textColor: '#ffc08aff', svgIcon: '../../assets/nodejs.svg', flexDirection: 'row' },
-    { skillset: 'Angular', boxColor: '#040316ff', textColor: '#ffc08aff', svgIcon: '../../assets/angular.svg', flexDirection: 'column' },
-    { skillset: 'MySQL', boxColor: '#da6e44ff', textColor: '#040316ff', svgIcon: '../../assets/mysql.svg', flexDirection: 'column' },
-    { skillset: 'Linux', boxColor: '#ffc08aff', textColor: '#040316ff', svgIcon: '../../assets/linux.svg', flexDirection: 'column' },
+    { skillset: 'NodeJS', boxColor: '#573333ff', textColor: '#ffc08aff', svgIcon: './assets/nodejs.svg', flexDirection: 'row' },
+    { skillset: 'Angular', boxColor: '#040316ff', textColor: '#ffc08aff', svgIcon: './assets/angular.svg', flexDirection: 'column' },
+    { skillset: 'MySQL', boxColor: '#da6e44ff', textColor: '#040316ff', svgIcon: './assets/mysql.svg', flexDirection: 'column' },
+    { skillset: 'Linux', boxColor: '#ffc08aff', textColor: '#040316ff', svgIcon: './assets/linux.svg', flexDirection: 'column' },
   ];
 
   public SERVICES = [
-    { name: 'BrandReputationEnhancement', service: 'Brand Reputation Enhancement', description: 'Have something unique experience for your customer, have them trust in you.', svgIcon: '../../assets/handshake.svg' },
-    { name: 'MoreIncomeLessTask', service: 'More Income, Less Task', description: 'Eliminate Repetitive Task, Focus on Your Business Core Values.', svgIcon: '../../assets/sales_amount.svg' },
-    { name: 'ZeroInformationLag', service: 'Zero Information-Lag', description: 'You are the decision maker, all information of your business at one screen.', svgIcon: '../../assets/dashboard.svg' },
+    { name: 'BrandReputationEnhancement', service: 'Brand Reputation Enhancement', description: 'Have something unique experience for your customer, have them trust in you.', svgIcon: './assets/handshake.svg' },
+    { name: 'MoreIncomeLessTask', service: 'More Income, Less Task', description: 'Eliminate Repetitive Task, Focus on Your Business Core Values.', svgIcon: './assets/sales_amount.svg' },
+    { name: 'ZeroInformationLag', service: 'Zero Information-Lag', description: 'You are the decision maker, all information of your business at one screen.', svgIcon: './assets/dashboard.svg' },
   ]
 
   // Dependency Injection
@@ -50,8 +50,8 @@ export class LandingPageComponent implements OnInit, OnDestroy {
     this.SERVICES.forEach(element => {
       this.matIconRegistry.addSvgIcon(`${element.name}`, this.domSanitizer.bypassSecurityTrustResourceUrl(element.svgIcon));
     });
-    this.matIconRegistry.addSvgIcon('logo', this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/max_logo.svg'));
-    this.matIconRegistry.addSvgIcon('email', this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/email.svg'));
+    this.matIconRegistry.addSvgIcon('logo', this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/max_logo.svg'));
+    this.matIconRegistry.addSvgIcon('email', this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/email.svg'));
   }
 
   ngOnInit(): void {

@@ -40,7 +40,7 @@ export class AppComponent implements OnInit, OnDestroy {
   public isMobileView: boolean = false;
 
   constructor() {
-    this.matIconRegistry.addSvgIcon('logo', this.domSanitizer.bypassSecurityTrustResourceUrl('~/assets/max_logo.svg'));
+    this.matIconRegistry.addSvgIcon('logo', this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/max_logo.svg'));
   }
 
   ngOnInit(): void {
