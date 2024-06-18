@@ -29,7 +29,7 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "baseHref": "https://maxtanchangyong.github.io/maxtan-website-client/"
+            "baseHref": "/maxtan-website-client/"
           },
           "configurations": {
             "production": {
