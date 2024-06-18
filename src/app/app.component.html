@@ -1,15 +1,29 @@
 <mat-drawer-container>
   <mat-drawer #drawer mode="side">hello</mat-drawer>
   <mat-drawer-content>
+    @if (isMobileView) {
+    <mat-toolbar style="display: flex; flex-direction: column; justify-content: center;">
+        <button mat-icon-button (click)="drawer.toggle()" style="transform: scale(3);">
+          <mat-icon svgIcon="logo"></mat-icon>
+        </button>
+        <button mat-flat-button color="primary">
+          <mat-icon>picture_as_pdf</mat-icon>
+          Resume
+        </button>
+    </mat-toolbar>
+    }
+    @else {
     <mat-toolbar>
-      <button mat-icon-button id="logo_icon_button" (click)="drawer.toggle()">
+      <button mat-icon-button (click)="drawer.toggle()" style="transform: scale(3);">
         <mat-icon svgIcon="logo"></mat-icon>
       </button>
-      <button mat-flat-button color="primary" id="resume_button">
+      <button mat-flat-button color="primary" style="transform: scale(1.2);">
         <mat-icon>picture_as_pdf</mat-icon>
         Resume
       </button>
     </mat-toolbar>
+    }
+
     <router-outlet></router-outlet>
   </mat-drawer-content>
 </mat-drawer-container>

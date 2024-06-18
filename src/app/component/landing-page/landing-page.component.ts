@@ -1,5 +1,9 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnDestroy, OnInit, inject } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { Subject, takeUntil } from 'rxjs';
+
+// Service
+import { MobileViewService } from '../../service/mobile-view/mobile-view.service';
 
 // Material
 import { MatIconModule } from '@angular/material/icon';
@@ -15,7 +19,7 @@ import { MatButtonModule } from '@angular/material/button';
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
-export class LandingPageComponent {
+export class LandingPageComponent implements OnInit, OnDestroy {
 
   public SKILLSETS = [
     { skillset: 'NodeJS', boxColor: '#573333ff', textColor: '#ffc08aff', svgIcon: '../../assets/nodejs.svg', flexDirection: 'row' },
@@ -30,8 +34,14 @@ export class LandingPageComponent {
     { name: 'ZeroInformationLag', service: 'Zero Information-Lag', description: 'You are the decision maker, all information of your business at one screen.', svgIcon: '../../assets/dashboard.svg' },
   ]
 
+  // Dependency Injection
   private matIconRegistry = inject(MatIconRegistry);
   private domSanitizer = inject(DomSanitizer);
+  private mobileViewService = inject(MobileViewService);
+
+  // Variable
+  private destroyed$ = new Subject<void>();
+  public isMobileView: boolean = false;
 
   constructor() {
     this.SKILLSETS.forEach(element => {
@@ -42,5 +52,14 @@ export class LandingPageComponent {
     });
     this.matIconRegistry.addSvgIcon('logo', this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/max_logo.svg'));
     this.matIconRegistry.addSvgIcon('email', this.domSanitizer.bypassSecurityTrustResourceUrl('../../assets/email.svg'));
+  }
+
+  ngOnInit(): void {
+    this.mobileViewService.isMobileView.pipe(takeUntil(this.destroyed$)).subscribe((result: boolean) => { this.isMobileView = result; });
+  }
+
+  ngOnDestroy(): void {
+    this.destroyed$.next();
+    this.destroyed$.complete();
   }
 }

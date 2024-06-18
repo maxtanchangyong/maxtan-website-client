@@ -10,7 +10,7 @@
     align-items: center;
 }
 
-#skillsets_container {
+#skillsets_container_desktop {
     height: 35em;
     gap: 0.8em;
     display: grid;
@@ -21,20 +21,14 @@
         "Angular MySQL Linux";
 }
 
-#services_container {
-    height: 120em;
-    display: block;
-}
-
-#reminder_container {
-    height: 50em;
-    display: flex;
-    flex-direction: column;
-}
-
-#contact_container {
-    height: 50em;
-    background-color: #DFC8AF;
-    border-radius: 15px;
-    width: 100%;
+#skillsets_container_mobile {
+    height: 60em;
+    gap: 1.2em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "NodeJS"
+        "Angular"
+        "MySQL"
+        "Linux";
 }

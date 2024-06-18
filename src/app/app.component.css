@@ -10,13 +10,5 @@ mat-drawer {
 
 mat-drawer-content {
     background-color: #E8D0B5;
-    padding: 0% 15% 0% 15%;
-}
-
-#logo_icon_button {
-    transform: scale(3);
-}
-
-#resume_button {
-    transform: scale(1.2);
+    padding: 0% 12% 0% 12%;
 }
