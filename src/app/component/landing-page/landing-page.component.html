@@ -75,6 +75,11 @@
     ||        Desktop View        ||
     ||                            ||
     #############################-->
+
+    <!-- Dinosaur Game -->
+    <app-jumping-game></app-jumping-game>
+
+    <!-- Skillset -->
     <section id="skillsets_container_desktop">
         @for (skillset of SKILLSETS; track $index) {
         <div [style.grid-area]="skillset.skillset.toString()" [style.background-color]="skillset.boxColor"

@@ -10,10 +10,14 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatIconRegistry } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
+// Component
+import { JumpingGameComponent } from '../jumping-game/jumping-game.component';
+
 @Component({
   selector: 'app-landing-page',
   standalone: true,
   imports: [
+    JumpingGameComponent,
     MatIconModule, MatButtonModule,
   ],
   templateUrl: './landing-page.component.html',
