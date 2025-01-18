@@ -3,10 +3,10 @@
   <mat-drawer-content>
     @if (isMobileView) {
     <mat-toolbar style="display: flex; flex-direction: column; justify-content: center;">
-        <button mat-icon-button (click)="drawer.toggle()" style="transform: scale(3);">
+        <button mat-icon-button (click)="toHome()" style="transform: scale(3);">
           <mat-icon svgIcon="logo"></mat-icon>
         </button>
-        <button mat-flat-button color="primary">
+        <button mat-flat-button color="primary" (click)="toResume()">
           <mat-icon>picture_as_pdf</mat-icon>
           Resume
         </button>
@@ -17,7 +17,7 @@
       <button mat-icon-button (click)="drawer.toggle()" style="transform: scale(3);">
         <mat-icon svgIcon="logo"></mat-icon>
       </button>
-      <button mat-flat-button color="primary" style="transform: scale(1.2);">
+      <button mat-flat-button color="primary" style="transform: scale(1.2);" (click)="toResume()">
         <mat-icon>picture_as_pdf</mat-icon>
         Resume
       </button>

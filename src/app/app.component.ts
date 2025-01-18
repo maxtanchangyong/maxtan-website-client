@@ -1,5 +1,5 @@
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, Router } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Subject, takeUntil } from 'rxjs';
 
@@ -34,6 +34,7 @@ export class AppComponent implements OnInit, OnDestroy {
   private domSanitizer = inject(DomSanitizer);
   private responsive = inject(BreakpointObserver);
   private mobileViewService = inject(MobileViewService);
+  private router = inject(Router);
 
   // Variable
   private destroyed$ = new Subject<void>();
@@ -48,6 +49,14 @@ export class AppComponent implements OnInit, OnDestroy {
       result.matches ? this.mobileViewService.setMobileView() : this.mobileViewService.setDesktopView();
     });
     this.mobileViewService.isMobileView.pipe(takeUntil(this.destroyed$)).subscribe((result: boolean) => { this.isMobileView = result; });
+  }
+
+  toHome() {
+    this.router.navigate(['/home']);
+  }
+
+  toResume() {
+    this.router.navigate(['/resume']);
   }
 
   ngOnDestroy(): void {
